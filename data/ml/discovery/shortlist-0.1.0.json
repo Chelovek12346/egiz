@@ -1,0 +1,930 @@
+{
+ "schema": "egiz.discovery_shortlist",
+ "schema_version": "0.1.0",
+ "rules": {
+  "F_min": 0.5,
+  "rank_p95_share_max": 0.1,
+  "bare_frac_min": 0.7,
+  "precip_mm_max": 250.0,
+  "coverage_level": "L4_validated",
+  "min_km_from_known": 150.0
+ },
+ "inputs": {
+  "results": "artifacts\\ml\\discovery-env",
+  "geo": "data\\geo\\geo-0.1.0",
+  "env": "data\\env\\env-0.1.0",
+  "known": "data\\ml\\reference\\reference_sites-0.1.0.csv"
+ },
+ "caveats": [
+  "Similarity of measured conditions for a task, not suitability: access, safety, permits not assessed.",
+  "'New' = farther than 150 km from our reference list and pilots; a quick literature check is in 'literature'.",
+  "Geology label is a map-unit proxy at the AOI centre, not mineralogy.",
+  "Earth cannot reproduce vacuum, gravity, radiation or full thermal conditions of the Moon or Mars.",
+  "Cold/dry objectives O5 and M4 are not included: target surface temperatures are not curated yet."
+ ],
+ "sites": [
+  {
+   "aoi_id": "SM_E064.275_N33.323",
+   "region": "Ghor Province, Afghanistan",
+   "lon": 64.275,
+   "lat": 33.323,
+   "nearest_known": {
+    "site": "PILOT_BOSZHIRA",
+    "km": 1422
+   },
+   "literature": {
+    "status": "none_found",
+    "note": "No planetary-analog study of Ghor Province found",
+    "url": null
+   },
+   "conditions": {
+    "bare_frac": 0.8718,
+    "precip_mm": 236.3,
+    "t_min_c": -9.5555,
+    "t_max_c": 42.9164,
+    "relief_m": 901.6385,
+    "elev_p50_m": 2350.1772,
+    "geo_lith_label": "sandstone and siltstone"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M3",
+     "objective_name": "Field geology",
+     "F": 0.949,
+     "rank": 3,
+     "eligible": 296,
+     "rank_p95": 3.0,
+     "matching": [
+      "bare_frac",
+      "relief_m"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.871771,
+       "target_value": null,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "relief_m",
+       "earth_value": 901.63846436,
+       "target_value": 742.9878723144532,
+       "fidelity": 0.8547131540561019
+      }
+     ]
+    },
+    {
+     "target": "MOON_MONS_MOUTON",
+     "objective": "O1",
+     "objective_name": "Landing hazard rehearsal",
+     "F": 0.556,
+     "rank": 12,
+     "eligible": 314,
+     "rank_p95": 23.0,
+     "matching": [
+      "frac_lt10_f100",
+      "tri_f100_m"
+     ],
+     "mismatches": [
+      "slope_f100_p90_deg"
+     ],
+     "attributes": [
+      {
+       "attr": "frac_lt10_f100",
+       "earth_value": 0.338925,
+       "target_value": 0.4034,
+       "fidelity": 0.8123278361095251
+      },
+      {
+       "attr": "slope_f100_p90_deg",
+       "earth_value": 27.98294776,
+       "target_value": 21.432034285811273,
+       "fidelity": 0.26156378524967644
+      },
+      {
+       "attr": "tri_f100_m",
+       "earth_value": 9.7828064,
+       "target_value": 7.77740478515625,
+       "fidelity": 0.8020572322471796
+      }
+     ]
+    },
+    {
+     "target": "MOON_MONS_MOUTON",
+     "objective": "O3",
+     "objective_name": "LTV slope mobility",
+     "F": 0.514,
+     "rank": 5,
+     "eligible": 314,
+     "rank_p95": 19.099999999999966,
+     "matching": [
+      "bare_frac"
+     ],
+     "mismatches": [
+      "slope_f100_p90_deg"
+     ],
+     "attributes": [
+      {
+       "attr": "slope_f100_p50_deg",
+       "earth_value": 13.18871646,
+       "target_value": 11.397202844269422,
+       "fidelity": 0.6695227529641155
+      },
+      {
+       "attr": "slope_f100_p90_deg",
+       "earth_value": 27.98294776,
+       "target_value": 21.432034285811273,
+       "fidelity": 0.26156378524967644
+      },
+      {
+       "attr": "frac_lt20_f100",
+       "earth_value": 0.74425,
+       "target_value": 0.852775,
+       "fidelity": 0.5549463807023481
+      },
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.871771,
+       "target_value": null,
+       "fidelity": 1.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E088.272_N42.406",
+   "region": "Turpan, Xinjiang, China",
+   "lon": 88.272,
+   "lat": 42.406,
+   "nearest_known": {
+    "site": "PILOT_BOSZHIRA",
+    "km": 2758
+   },
+   "literature": {
+    "status": "mentioned",
+    "note": "Turpan depression appears only as a site caption on a popular Mars-analog page; Chinese Mars-analog work concentrates on the Qaidam Basin",
+    "url": "https://planete-mars.com/?p=1094"
+   },
+   "conditions": {
+    "bare_frac": 0.9698,
+    "precip_mm": 138.4,
+    "t_min_c": -14.4627,
+    "t_max_c": 44.9631,
+    "relief_m": 1016.3237,
+    "elev_p50_m": 1670.5289,
+    "geo_lith_label": "crystalline metamorphic rocks"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M3",
+     "objective_name": "Field geology",
+     "F": 0.872,
+     "rank": 5,
+     "eligible": 296,
+     "rank_p95": 5.0,
+     "matching": [
+      "bare_frac"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.969813,
+       "target_value": null,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "relief_m",
+       "earth_value": 1016.32366943,
+       "target_value": 742.9878723144532,
+       "fidelity": 0.6627705640449607
+      }
+     ]
+    },
+    {
+     "target": "MOON_MONS_MOUTON",
+     "objective": "O1",
+     "objective_name": "Landing hazard rehearsal",
+     "F": 0.533,
+     "rank": 13,
+     "eligible": 314,
+     "rank_p95": 21.0,
+     "matching": [
+      "tri_f100_m"
+     ],
+     "mismatches": [
+      "slope_f100_p90_deg"
+     ],
+     "attributes": [
+      {
+       "attr": "frac_lt10_f100",
+       "earth_value": 0.5034,
+       "target_value": 0.4034,
+       "fidelity": 0.6065306597126335
+      },
+      {
+       "attr": "slope_f100_p90_deg",
+       "earth_value": 27.4471667,
+       "target_value": 21.432034285811273,
+       "fidelity": 0.3228130837782627
+      },
+      {
+       "attr": "tri_f100_m",
+       "earth_value": 8.19558716,
+       "target_value": 7.77740478515625,
+       "fidelity": 0.9885691262868889
+      }
+     ]
+    },
+    {
+     "target": "MOON_MONS_MOUTON",
+     "objective": "O3",
+     "objective_name": "LTV slope mobility",
+     "F": 0.609,
+     "rank": 4,
+     "eligible": 314,
+     "rank_p95": 12.0,
+     "matching": [
+      "bare_frac"
+     ],
+     "mismatches": [
+      "slope_f100_p90_deg"
+     ],
+     "attributes": [
+      {
+       "attr": "slope_f100_p50_deg",
+       "earth_value": 9.90442956,
+       "target_value": 11.397202844269422,
+       "fidelity": 0.7568830644675363
+      },
+      {
+       "attr": "slope_f100_p90_deg",
+       "earth_value": 27.4471667,
+       "target_value": 21.432034285811273,
+       "fidelity": 0.3228130837782627
+      },
+      {
+       "attr": "frac_lt20_f100",
+       "earth_value": 0.772025,
+       "target_value": 0.852775,
+       "fidelity": 0.7217848869462963
+      },
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.969813,
+       "target_value": null,
+       "fidelity": 1.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E056.315_N32.716",
+   "region": "Tabas County, South Khorasan, Iran",
+   "lon": 56.315,
+   "lat": 32.716,
+   "nearest_known": {
+    "site": "PILOT_BOSZHIRA",
+    "km": 1202
+   },
+   "literature": {
+    "status": "region_known",
+    "note": "Lut Desert (northern Lut begins near Tabas): megaripples and yardangs as Mars analogs (Foroutan & Zimbelman 2016, Icarus)",
+    "url": "https://profiles.si.edu/display/sro_139430"
+   },
+   "conditions": {
+    "bare_frac": 0.9988,
+    "precip_mm": 108.1,
+    "t_min_c": -1.9179,
+    "t_max_c": 57.1405,
+    "relief_m": 157.4053,
+    "elev_p50_m": 1154.5498,
+    "geo_lith_label": null
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M1",
+     "objective_name": "Landing hazard rehearsal",
+     "F": 0.999,
+     "rank": 1,
+     "eligible": 314,
+     "rank_p95": 2.0,
+     "matching": [
+      "frac_lt10_f400",
+      "slope_f400_p90_deg",
+      "tri_f400_m"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "frac_lt10_f400",
+       "earth_value": 0.9996,
+       "target_value": 1.0,
+       "fidelity": 0.999992000032
+      },
+      {
+       "attr": "slope_f400_p90_deg",
+       "earth_value": 3.95265509,
+       "target_value": 3.819797296945511,
+       "fidelity": 0.999448552316466
+      },
+      {
+       "attr": "tri_f400_m",
+       "earth_value": 5.36132812,
+       "target_value": 5.5456085205078125,
+       "fidelity": 0.9952245705355233
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E036.670_N20.393",
+   "region": "Red Sea State, Sudan",
+   "lon": 36.67,
+   "lat": 20.393,
+   "nearest_known": {
+    "site": "PILOT_WADI_RUM",
+    "km": 1019
+   },
+   "literature": {
+    "status": "none_found",
+    "note": "Red Sea Hills of Sudan described by NASA Earth Observatory, not as an analog",
+    "url": "https://eol.jsc.nasa.gov/Collections/EarthObservatory/articles/TheRedSeaHillsofSudan.htm"
+   },
+   "conditions": {
+    "bare_frac": 0.9984,
+    "precip_mm": 52.1,
+    "t_min_c": 13.6279,
+    "t_max_c": 52.5577,
+    "relief_m": 712.7677,
+    "elev_p50_m": 895.6469,
+    "geo_lith_label": "sedimentary and volcaniclastic"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M3",
+     "objective_name": "Field geology",
+     "F": 0.998,
+     "rank": 1,
+     "eligible": 296,
+     "rank_p95": 1.0,
+     "matching": [
+      "bare_frac",
+      "relief_m"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.99841475,
+       "target_value": null,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "relief_m",
+       "earth_value": 712.76770325,
+       "target_value": 742.9878723144532,
+       "fidelity": 0.9927990570284766
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E057.245_N34.350",
+   "region": "Boshruyeh County, South Khorasan, Iran",
+   "lon": 57.245,
+   "lat": 34.35,
+   "nearest_known": {
+    "site": "PILOT_BOSZHIRA",
+    "km": 1040
+   },
+   "literature": {
+    "status": "none_found",
+    "note": "No analog study found for Boshruyeh (north of the Lut analog region)",
+    "url": null
+   },
+   "conditions": {
+    "bare_frac": 0.9919,
+    "precip_mm": 122.9,
+    "t_min_c": -1.4833,
+    "t_max_c": 53.4907,
+    "relief_m": 702.1522,
+    "elev_p50_m": 1034.498,
+    "geo_lith_label": null
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M3",
+     "objective_name": "Field geology",
+     "F": 0.996,
+     "rank": 2,
+     "eligible": 296,
+     "rank_p95": 2.0,
+     "matching": [
+      "bare_frac",
+      "relief_m"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.9919015,
+       "target_value": null,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "relief_m",
+       "earth_value": 702.15224915,
+       "target_value": 742.9878723144532,
+       "fidelity": 0.9866954366803992
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_W002.775_N23.704",
+   "region": "Bordj Badji Mokhtar, Algeria",
+   "lon": -2.775,
+   "lat": 23.704,
+   "nearest_known": {
+    "site": "RIO_TINTO",
+    "km": 1553
+   },
+   "literature": {
+    "status": "region_known",
+    "note": "Tanezrouft Basin: salt-flat deposits proposed as a Mars Sample Return analog (AZALEA project, EPSC-DPS 2025)",
+    "url": "https://meetingorganizer.copernicus.org/EPSC-DPS2025/EPSC-DPS2025-1671.html"
+   },
+   "conditions": {
+    "bare_frac": 1.0,
+    "precip_mm": 28.8,
+    "t_min_c": 7.4049,
+    "t_max_c": 53.2721,
+    "relief_m": 55.1954,
+    "elev_p50_m": 272.5887,
+    "geo_lith_label": "sedimentary"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M1",
+     "objective_name": "Landing hazard rehearsal",
+     "F": 0.989,
+     "rank": 9,
+     "eligible": 314,
+     "rank_p95": 10.049999999999983,
+     "matching": [
+      "frac_lt10_f400",
+      "slope_f400_p90_deg",
+      "tri_f400_m"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "frac_lt10_f400",
+       "earth_value": 1.0,
+       "target_value": 1.0,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "slope_f400_p90_deg",
+       "earth_value": 3.27450328,
+       "target_value": 3.819797296945511,
+       "fidelity": 0.9907509887768696
+      },
+      {
+       "attr": "tri_f400_m",
+       "earth_value": 4.99530983,
+       "target_value": 5.5456085205078125,
+       "fidelity": 0.9552550742805629
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E022.552_N29.356",
+   "region": "Al Wahat, Libya",
+   "lon": 22.552,
+   "lat": 29.356,
+   "nearest_known": {
+    "site": "PILOT_WADI_RUM",
+    "km": 1253
+   },
+   "literature": {
+    "status": "mentioned",
+    "note": "Sahara-wide analog proposals; the nearest specific Libyan analog is Wau-an-Namus volcano (~600 km away)",
+    "url": "https://programme.exordo.com/ims2016/delegates/presentation/444"
+   },
+   "conditions": {
+    "bare_frac": 1.0,
+    "precip_mm": 35.9,
+    "t_min_c": 5.3377,
+    "t_max_c": 51.0975,
+    "relief_m": 46.9235,
+    "elev_p50_m": 104.953,
+    "geo_lith_label": "sedimentary"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M1",
+     "objective_name": "Landing hazard rehearsal",
+     "F": 0.986,
+     "rank": 12,
+     "eligible": 314,
+     "rank_p95": 15.0,
+     "matching": [
+      "frac_lt10_f400",
+      "slope_f400_p90_deg",
+      "tri_f400_m"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "frac_lt10_f400",
+       "earth_value": 0.998,
+       "target_value": 1.0,
+       "fidelity": 0.9998000199986667
+      },
+      {
+       "attr": "slope_f400_p90_deg",
+       "earth_value": 3.52801376,
+       "target_value": 3.819797296945511,
+       "fidelity": 0.9973429851156217
+      },
+      {
+       "attr": "tri_f400_m",
+       "earth_value": 4.84264326,
+       "target_value": 5.5456085205078125,
+       "fidelity": 0.92588384529396
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E104.764_N38.565",
+   "region": "Alxa League, Inner Mongolia, China",
+   "lon": 104.764,
+   "lat": 38.565,
+   "nearest_known": {
+    "site": "PILOT_BOSZHIRA",
+    "km": 4213
+   },
+   "literature": {
+    "status": "none_found",
+    "note": "Alxa deserts: only a tourist 'Mars Base 1'; no scientific analog study found",
+    "url": null
+   },
+   "conditions": {
+    "bare_frac": 0.9837,
+    "precip_mm": 202.8,
+    "t_min_c": -17.6842,
+    "t_max_c": 54.8373,
+    "relief_m": 74.1419,
+    "elev_p50_m": 1354.6309,
+    "geo_lith_label": "sedimentary rocks"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M1",
+     "objective_name": "Landing hazard rehearsal",
+     "F": 0.982,
+     "rank": 14,
+     "eligible": 314,
+     "rank_p95": 17.0,
+     "matching": [
+      "frac_lt10_f400",
+      "slope_f400_p90_deg",
+      "tri_f400_m"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "frac_lt10_f400",
+       "earth_value": 0.9972,
+       "target_value": 1.0,
+       "fidelity": 0.9996080768219616
+      },
+      {
+       "attr": "slope_f400_p90_deg",
+       "earth_value": 4.83454275,
+       "target_value": 3.819797296945511,
+       "fidelity": 0.9683338300025442
+      },
+      {
+       "attr": "tri_f400_m",
+       "earth_value": 6.14876556,
+       "target_value": 5.5456085205078125,
+       "fidelity": 0.9563053333671816
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E026.496_N26.620",
+   "region": "New Valley, Egypt",
+   "lon": 26.496,
+   "lat": 26.62,
+   "nearest_known": {
+    "site": "PILOT_WADI_RUM",
+    "km": 939
+   },
+   "literature": {
+    "status": "region_known",
+    "note": "Western Desert of Egypt: aeolian landforms studied as Mars analogs (El-Baz et al. 1979, JGR; NASA reports on the Kharga depression, ~400 km east)",
+    "url": "https://pubs.usgs.gov/publication/70012315"
+   },
+   "conditions": {
+    "bare_frac": 1.0,
+    "precip_mm": 7.2,
+    "t_min_c": 3.7231,
+    "t_max_c": 51.6878,
+    "relief_m": 36.7631,
+    "elev_p50_m": 268.0854,
+    "geo_lith_label": "sedimentary"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M1",
+     "objective_name": "Landing hazard rehearsal",
+     "F": 0.979,
+     "rank": 16,
+     "eligible": 314,
+     "rank_p95": 17.0,
+     "matching": [
+      "frac_lt10_f400",
+      "slope_f400_p90_deg",
+      "tri_f400_m"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "frac_lt10_f400",
+       "earth_value": 1.0,
+       "target_value": 1.0,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "slope_f400_p90_deg",
+       "earth_value": 3.02404833,
+       "target_value": 3.819797296945511,
+       "fidelity": 0.9804064846354206
+      },
+      {
+       "attr": "tri_f400_m",
+       "earth_value": 4.79098511,
+       "target_value": 5.5456085205078125,
+       "fidelity": 0.914228814418521
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E012.445_N16.628",
+   "region": "Diffa Region, Niger",
+   "lon": 12.445,
+   "lat": 16.628,
+   "nearest_known": {
+    "site": "PILOT_WADI_RUM",
+    "km": 2750
+   },
+   "literature": {
+    "status": "mentioned",
+    "note": "T\u00e9n\u00e9r\u00e9 linear dunes compared with Mars and Titan dunes (far north of Diffa)",
+    "url": "https://www.futura-sciences.com/sciences/actualites/cea-dunes-mars-titan-mieux-comprises-grace-desert-tenere-60334/"
+   },
+   "conditions": {
+    "bare_frac": 1.0,
+    "precip_mm": 73.9,
+    "t_min_c": 8.667,
+    "t_max_c": 50.4604,
+    "relief_m": 38.3978,
+    "elev_p50_m": 426.1008,
+    "geo_lith_label": "sedimentary"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M1",
+     "objective_name": "Landing hazard rehearsal",
+     "F": 0.958,
+     "rank": 23,
+     "eligible": 314,
+     "rank_p95": 26.0,
+     "matching": [
+      "frac_lt10_f400",
+      "slope_f400_p90_deg"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "frac_lt10_f400",
+       "earth_value": 1.0,
+       "target_value": 1.0,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "slope_f400_p90_deg",
+       "earth_value": 4.43550124,
+       "target_value": 3.819797296945511,
+       "fidelity": 0.9882232901956056
+      },
+      {
+       "attr": "tri_f400_m",
+       "earth_value": 7.03216934,
+       "target_value": 5.5456085205078125,
+       "fidelity": 0.7894668825396687
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_W009.541_N28.648",
+   "region": "Assa-Zag Province, Guelmim-Oued Noun, Morocco",
+   "lon": -9.541,
+   "lat": 28.648,
+   "nearest_known": {
+    "site": "RIO_TINTO",
+    "km": 982
+   },
+   "literature": {
+    "status": "region_known",
+    "note": "Southern Morocco: Tindouf Basin soils as a Noachian Mars analog (Oberlin et al. 2018); other Moroccan sites near Erfoud (MARS2013, ESA rover tests)",
+    "url": "https://research-portal.st-andrews.ac.uk/en/publications/evaluation-of-the-tindouf-basin-region-in-southern-morocco-as-an-/"
+   },
+   "conditions": {
+    "bare_frac": 0.9956,
+    "precip_mm": 121.4,
+    "t_min_c": 10.1253,
+    "t_max_c": 49.0058,
+    "relief_m": 589.8535,
+    "elev_p50_m": 619.3169,
+    "geo_lith_label": "sedimentary"
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M3",
+     "objective_name": "Field geology",
+     "F": 0.928,
+     "rank": 4,
+     "eligible": 296,
+     "rank_p95": 4.0,
+     "matching": [
+      "bare_frac"
+     ],
+     "mismatches": [],
+     "attributes": [
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.995584,
+       "target_value": null,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "relief_m",
+       "earth_value": 589.85353241,
+       "target_value": 742.9878723144532,
+       "fidelity": 0.7998914797650365
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_W074.290_S15.440",
+   "region": "Ayacucho, Peru",
+   "lon": -74.29,
+   "lat": -15.44,
+   "nearest_known": {
+    "site": "PILOT_ATACAMA",
+    "km": 1125
+   },
+   "literature": {
+    "status": "none_found",
+    "note": "Nearest Peruvian Mars analog is Pampas de La Joya (~260 km SE); nothing found for this area",
+    "url": null
+   },
+   "conditions": {
+    "bare_frac": 0.989,
+    "precip_mm": 142.8,
+    "t_min_c": 10.921,
+    "t_max_c": 45.9612,
+    "relief_m": 1601.4902,
+    "elev_p50_m": 2216.7607,
+    "geo_lith_label": "Granite"
+   },
+   "matches": [
+    {
+     "target": "MOON_MONS_MOUTON",
+     "objective": "O2",
+     "objective_name": "EVA and field geology",
+     "F": 0.77,
+     "rank": 1,
+     "eligible": 296,
+     "rank_p95": 2.0,
+     "matching": [
+      "frac_lt20_r",
+      "bare_frac"
+     ],
+     "mismatches": [
+      "relief_m"
+     ],
+     "attributes": [
+      {
+       "attr": "frac_lt20_r",
+       "earth_value": 0.8166,
+       "target_value": 0.8269906928645294,
+       "fidelity": 0.9946162198614317
+      },
+      {
+       "attr": "relief_m",
+       "earth_value": 1601.49017334,
+       "target_value": 2549.96337890625,
+       "fidelity": 0.40379727173872154
+      },
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.98897125,
+       "target_value": null,
+       "fidelity": 1.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "aoi_id": "SM_E060.488_N29.596",
+   "region": "Zahedan County, Sistan and Baluchestan, Iran",
+   "lon": 60.488,
+   "lat": 29.596,
+   "nearest_known": {
+    "site": "PILOT_BOSZHIRA",
+    "km": 1633
+   },
+   "literature": {
+    "status": "region_known",
+    "note": "East of the Lut Desert analog region (Foroutan & Zimbelman 2016); nothing found for Zahedan itself",
+    "url": "https://profiles.si.edu/display/sro_139430"
+   },
+   "conditions": {
+    "bare_frac": 0.9983,
+    "precip_mm": 86.9,
+    "t_min_c": -0.3603,
+    "t_max_c": 55.543,
+    "relief_m": 383.1685,
+    "elev_p50_m": 1644.2449,
+    "geo_lith_label": null
+   },
+   "matches": [
+    {
+     "target": "MARS_JEZERO",
+     "objective": "M3",
+     "objective_name": "Field geology",
+     "F": 0.542,
+     "rank": 9,
+     "eligible": 296,
+     "rank_p95": 12.0,
+     "matching": [
+      "bare_frac"
+     ],
+     "mismatches": [
+      "relief_m"
+     ],
+     "attributes": [
+      {
+       "attr": "bare_frac",
+       "earth_value": 0.998324,
+       "target_value": null,
+       "fidelity": 1.0
+      },
+      {
+       "attr": "relief_m",
+       "earth_value": 383.16851807,
+       "target_value": 742.9878723144532,
+       "fidelity": 0.15913854688046894
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

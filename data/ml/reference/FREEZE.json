@@ -1,0 +1,19 @@
+{
+ "schema": "egiz.ml_freeze",
+ "schema_version": "0.1.0",
+ "frozen_at": "2026-11-15T03:47:15+00:00",
+ "reviewed_by": "project owner, branch larpmonster67 (decisions in docs/ML_PREREGISTRATION.md section 8)",
+ "sha256": {
+  "data/ml/reference/reference_sites-0.1.0.csv": "0a777f813039d68506f02d228091f1e07b730f1bd916f71bf7643bd1b459ee1c",
+  "data/ml/reference/sources-0.1.0.csv": "fee726752d3fe7c3473e77ec2c6584d80d43ca3d4a57f21d192625b9081cee14",
+  "docs/ML_PREREGISTRATION.md": "556369399a465a74c8719973848ed5db9c6a3b64d3dd261f9ffa04a707fbc726"
+ },
+ "inputs_sha256": {
+  "data/ml/reference/ref-aois-0.1.0/aoi_features.csv": "a62cea0b1d0db545cf36a9d1413ca7c801a8281737ef5f399ec6d6735400cead",
+  "data/ml/reference/ref-env-0.1.0/environment.json": "70263a191d0b482f307343aaf76aa8ec28ab04be613905d4d23a87bb6b9f95ae",
+  "data/geo/geo-0.1.0/aoi_features.csv": "ebe69bb80164be41c1c6de547faeb28aef95fb8e23718f02bd93da532b4e1de5",
+  "data/env/env-0.1.0/environment.json": "8410ec1eb381d6680beadb51ae17a0cf4f73b618fb3df67f2cfaa5c2ccba54bc"
+ },
+ "code_commit_before_freeze": "e2eb7d5a7e891aa0a18b14e78787aa50267d20a0",
+ "note": "No reference AOI had been scored when this file was written."
+}
