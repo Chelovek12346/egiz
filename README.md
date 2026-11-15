@@ -6,12 +6,11 @@ Design an Earth test campaign for a Moon base region or a Mars landing site. Egi
 
 **Current state: a local prototype with an exploratory measured terrain pilot and an optional synthetic software demo; competition readiness is not established.** Fixtures are invented software inputs, not NASA observations. Real raster ingestion and Earth Engine adapters are separate. See [implementation status](docs/engineering/IMPLEMENTATION_STATUS.md) for prior verification and remaining dependencies.
 
-
 ## Run locally
 
 Requires Python 3.11+ and Node.js 24.14.1+ (the pinned optional Open MCT distribution requires this Node version; tested with Python 3.13 and Node 24.14.1).
 
-The exact tested Python 3.13 environment is recorded in requirements-lock.txt. Use `.venv/bin/python -m pip install -r requirements-lock.txt` to reproduce that environment; the general requirements.txt lets older supported Python versions select compatible packages.
+The exact tested Python 3.13 environment is recorded in `requirements-lock.txt`. Use `.venv/bin/python -m pip install -r requirements-lock.txt` to reproduce that environment; the general `requirements.txt` lets older supported Python versions select compatible packages.
 
 ```bash
 make setup
@@ -30,37 +29,37 @@ make offline     # Package artifacts/egiz-offline.zip with a local launcher
 make serve       # Serve web/dist at http://127.0.0.1:4173
 ```
 
-The browser application needs no backend, database, API key, or generative AI service. Offline packages include data, fonts, and code. Satellite imagery requires internet; the local map/table remains available. Serve the app over localhost rather than opening index.html directly.
+The browser application needs no backend, database, API key, or generative AI service. Offline packages include data, fonts, and code. Satellite imagery requires internet; the local map/table remains available. Serve the app over localhost rather than opening `index.html` directly.
 
-## Verified development update
+## Campaign & Measured Pilot
 
-The measured pilot now includes **nine real Earth windows and two planetary targets**. In Campaign, explore **When does the best site change?** to inspect exact two-objective priority switches and apply them to the optimizer. Open a site for measured Earth–planet surfaces, shared-axis profiles, slope distributions and source hashes. Export the actual analysis or a Markdown field verification plan. Regional metrics now use matching 200 m sampling across bodies. Independent WorldCover land-cover data excludes the original water-dominated Kazakhstan window from all campaigns.
+The measured pilot includes **nine real Earth windows and two planetary targets**. In Campaign, explore **When does the best site change?** to inspect exact two-objective priority switches and apply them to the optimizer. Open a site for measured Earth–planet surfaces, shared-axis profiles, slope distributions and source hashes. Export the actual analysis or a Markdown field verification plan. Regional metrics use matching 200 m sampling across bodies. Independent WorldCover land-cover data excludes the original water-dominated Kazakhstan window from all campaigns.
 
 See [audit](docs/EGIZ_AUDIT.md), [method](docs/SCIENTIFIC_METHODOLOGY.md), [validation](docs/SCIENTIFIC_VALIDATION.md), [development record](docs/IMPLEMENTATION_PROGRESS.md), and [competition status / measured demo](docs/COMPETITION_READINESS.md). This is an exploratory pilot; missing environment, geological validation and global sampling remain open.
 
 ## Mission Lab
 
-Open **Mission Lab** from Campaign or use `/#/lab?data=pilot&target=MARS_JEZERO`. EGIZ now reconstructs the cached measured terrain into an interactive 3D scene and computes deterministic rover, launch, descent and regional EVA scenarios. Configuration, telemetry, events, replay, saved experiments, JSON reproduction, Markdown reports and five-run Earth/planet/counterfactual comparisons are implemented. The original ranking and evidence tools remain intact.
+Open **Mission Lab** from Campaign or use `/#/lab?data=pilot&target=MARS_JEZERO`. EGIZ reconstructs the cached measured terrain into an interactive 3D scene and computes deterministic rover, launch, descent and regional EVA scenarios. Configuration, telemetry, events, replay, saved experiments, JSON reproduction, Markdown reports and five-run Earth/planet/counterfactual comparisons are implemented. The original ranking and evidence tools remain intact.
 
-The flagship comparison holds mission inputs fixed while running actual Earth terrain under Earth parameters and explicitly substituted planetary parameters. It includes regional geometry statistics and result-backed explanations. This remains a simplified local research/education prototype: **200 m terrain, reference atmospheres, point-mass flight, regional kinematic traversal; no spacecraft or field certification.**
+The flagship comparison holds mission inputs fixed while running actual Earth terrain under Earth parameters and explicitly substituted planetary parameters. It includes regional geometry statistics and result-backed explanations. This is a simplified local research/education prototype: **200 m terrain, reference atmospheres, point-mass flight, regional kinematic traversal; no spacecraft or field certification.**
 
 Read the [implemented model, equations, workflow, sources and next steps](docs/MISSION_LAB.md), [execution audit](docs/ASCENSION_EXECUTION.md) and [verification record](docs/ASCENSION_VALIDATION.md). Rebuild terrain with `.venv/bin/python -m pipeline.common.mission_terrain`; reproduce 24 benchmark scenarios with `node tools/benchmark_mission.mjs` (Node 22.18+).
 
-## Observatory rendering update
+## Observatory 3D Rendering
 
-Mission Lab now opens at vehicle scale with original articulated rover, rocket, lander and EVA assemblies, PBR materials, body-specific lighting, recorded-state interpolation, cinematic and scientific cameras, event-based replay, explicit failure experiments and synchronized Earth/planet 3D comparison. The measured 200 m terrain and scientific solver remain intact; surface detail and mechanical animation are visibly illustrative. See [implemented scope, browser evidence and remaining work](docs/VISUAL_REVOLUTION.md).
+Mission Lab opens at vehicle scale with original articulated rover, rocket, lander and EVA assemblies, PBR materials, body-specific lighting, recorded-state interpolation, cinematic and scientific cameras, event-based replay, explicit failure experiments and synchronized Earth/planet 3D comparison. The measured 200 m terrain and scientific solver remain intact; surface detail and mechanical animation are visibly illustrative. See [implemented scope, browser evidence and remaining work](docs/VISUAL_REVOLUTION.md).
 
-## Engineering evolution
+## Engineering & Mission Control
 
-Mission Explorer now connects a configurable six-wheel drivetrain and dimensioned 3D assembly to recorded motor/power/stability telemetry, a real **NASA CSPICE / SpiceyPy** geometry adapter, **NASA Open MCT** Mission Control, nine-design trade studies, and a mission-aware Earth validation campaign. The latter executes 17 matched measured-terrain runs, optimizes complementary experimental coverage, benchmarks simpler baselines, and exports a reproducible field plan. Genuine SPICE records for all 11 sites and the Open MCT runtime are packaged for browser-only use; custom SPICE epochs use an optional loopback Python service.
+Mission Explorer connects a configurable six-wheel drivetrain and dimensioned 3D assembly to recorded motor/power/stability telemetry, a real **NASA CSPICE / SpiceyPy** geometry adapter, **NASA Open MCT** Mission Control, nine-design trade studies, and a mission-aware Earth validation campaign. The latter executes 17 matched measured-terrain runs, optimizes complementary experimental coverage, benchmarks simpler baselines, and exports a reproducible field plan. Genuine SPICE records for all 11 sites and the Open MCT runtime are packaged for browser-only use; custom SPICE epochs use an optional loopback Python service.
 
-Open `/#/lab?data=pilot&target=MARS_JEZERO` and use **Rover engineering → Calculate → Mission Control → Earth validation**. Read the [implemented systems, equations, flagship workflow, numerical results and remaining priorities](docs/ENGINEERING_EVOLUTION.md), [engine sources/licenses](docs/engineering/SCIENTIFIC_ENGINES.md), and [verification record](docs/ENGINEERING_VERIFICATION.md). The regional model does not resolve wheel contact, soil, dynamic suspension or orbital mechanics. This is a working major increment; the full long-term vision remains unfinished.
+Open `/#/lab?data=pilot&target=MARS_JEZERO` and use **Rover engineering → Calculate → Mission Control → Earth validation**. Read the [implemented systems, equations, flagship workflow, numerical results and remaining priorities](docs/ENGINEERING_EVOLUTION.md), [engine sources/licenses](docs/engineering/SCIENTIFIC_ENGINES.md), and [verification record](docs/ENGINEERING_VERIFICATION.md). The regional model does not resolve wheel contact, soil, dynamic suspension or orbital mechanics.
 
 ## Real data
 
 See [the data guide](docs/engineering/REAL_DATA_GUIDE.md). Global processing requires an authenticated Google Earth Engine project and verified planetary DEM inputs. Nothing automatically reads or prints credentials. Never put keys in the repository.
 
-The four engine inputs are earth_candidates.json, targets.json, mission_templates.json, and sun_windows.json. `make data` uses complete validated inputs in data/processed/ and records their SHA-256 hashes. It refuses incomplete real-data inputs. Scientific validation stays not_run until experiments actually run. Synthetic data cannot be written into data/processed/.
+The four engine inputs are `earth_candidates.json`, `targets.json`, `mission_templates.json`, and `sun_windows.json`. `make data` uses complete validated inputs in `data/processed/` and records their SHA-256 hashes. It refuses incomplete real-data inputs. Scientific validation stays `not_run` until experiments actually run. Synthetic data cannot be written into `data/processed/`.
 
 ## Method
 
@@ -71,19 +70,13 @@ The four engine inputs are earth_candidates.json, targets.json, mission_template
 
 Read the [mathematics](docs/science/MATHEMATICAL_SPECIFICATION.md), [contracts](docs/engineering/API_AND_SCHEMA_CONTRACTS.md), and [validation protocol](docs/science/VALIDATION_PROTOCOL.md).
 
-## Chronology and disclosure
-
-The repository began as planning for NASA Space Apps Challenge 2026. Implementation began on **15 October 2026** at the repository user's explicit request, before the planned event. This does not constitute organizer authorization or a claim of competition eligibility. Existing authorization records remain unchanged. [Team planning guide](docs/README.md).
-
-Codex assisted with code, tests, fixtures, and draft text. Human scientific review remains pending. [AI disclosure](submission/ai_use.md), [references](submission/references.md). Egiz is independent and is not endorsed by NASA or ESA. Code is [MIT licensed](LICENSE).
-
-### Native engineering expansion
+## Native engineering expansion
 
 [EGIZ 4 implementation and model limits](docs/EGIZ_4_ENGINEERING.md) · [exact verification](docs/EGIZ_4_VERIFICATION.md). MuJoCo contact dynamics, Basilisk orbit propagation, a measured 10 m lunar mesh atlas and robust mission-conditioned Earth testing extend the existing browser workflows. Optional runtime: `pip install -e '.[science,dynamics,dev]'`, then `make science-serve` and `npm --prefix web run dev`. Browser-only recorded references remain available.
 
-### Operating decisions and observations
+## Operating decisions and observations
 
-The existing **Tests** workspace now searches feasible operating modes under fixed hardware, task and requirements, using actual regional rover records. It connects Pareto trade-offs, finite decision maps, requirement events in the mission chronograph, synchronized A/B evidence and the existing Earth campaign. A versioned SI observation import fits two electrical parameters with a separate held-out series; its included control is explicitly synthetic and does not establish physical validation. The familiar workspace now uses a restrained graphite/brass observatory treatment.
+The **Tests** workspace searches feasible operating modes under fixed hardware, task and requirements, using actual regional rover records. It connects Pareto trade-offs, finite decision maps, requirement events in the mission chronograph, synchronized A/B evidence and the existing Earth campaign. A versioned SI observation import fits two electrical parameters with a separate held-out series; its included control is explicitly synthetic and does not establish physical validation. The workspace uses a restrained graphite/brass observatory treatment.
 
 [Implemented scope, exact demo and scientific limits](docs/EGIZ_NEXT_ENGINEERING.md) · [verification and browser evidence](docs/EGIZ_NEXT_VERIFICATION.md).
 
@@ -91,3 +84,7 @@ The existing **Tests** workspace now searches feasible operating modes under fix
 node tools/benchmark_operating.mjs
 node tools/reproduce_operating.mjs artifacts/next-MOON_MONS_MOUTON.json
 ```
+
+## License & Disclosure
+
+Egiz is independent and is not endorsed by NASA or ESA. Code is [MIT licensed](LICENSE). See [AI disclosure](submission/ai_use.md) and [references](submission/references.md).
